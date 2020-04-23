@@ -1,0 +1,364 @@
+body {
+    overflow: hidden;
+    /* overflow-x: hidden; */
+
+    font-family: Montserrat;
+    font-size: 16px;
+
+    --dark: #0A0A12;
+    --black: #252525;
+
+    background: var(--dark);
+    color: #fff;
+
+    -webkit-user-select: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+/* ::-webkit-scrollbar {
+    width: 2px;
+}
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+::-webkit-scrollbar-thumb {
+    background: #fff;
+} */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+li {
+    list-style: none;
+}
+ol {
+    padding: 0;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    --contwidth: 900px;
+
+    width: 100%;
+    max-width: var(--contwidth);
+    min-height: 100vh;
+
+    margin: 0 auto;
+}
+.main_canvas {
+    position: fixed;
+    z-index: -100;
+}
+
+/* Fade */
+.fade {
+    transition: .6s;
+}
+.delay {
+    transition-delay: .15s;
+}
+.delay2 {
+    transition-delay: .2s;
+}
+.delay3 {
+    transition-delay: .3s;
+}
+
+/* Header */
+.header,
+.header._bottom {
+    width: 100%;
+    max-width: var(--contwidth);
+    height: 100px;
+
+    --defuicolor: #fff;
+}
+.header.dark {
+    --defuicolor: var(--black);
+}
+.header.dark .button.fill {
+    color: #fff;
+}
+.header .button.fill {
+    background: var(--defuicolor);
+}
+.header svg rect {
+    fill: var(--defuicolor);
+    transition: .3s;
+}
+.header svg circle {
+    transition: .3s;
+}
+.header svg ellipse,
+.header svg circle {
+    stroke: var(--defuicolor);
+}
+/* > Bottom header */
+.header._bottom {
+    top: calc(100vh - 100px);
+}
+/* > > Music toogle */
+.music-toogle .track {
+    fill: #565656;
+}
+/* > Scroll bar */
+.scroll_bar {
+    height: 100%;
+
+    align-self: flex-end;
+    z-index: 988;
+
+    opacity: 0;
+
+    transition: .3s;
+}
+.scroll_bar .content.block {
+    height: 300px;
+}
+/* > > Scroller */
+.scroll_bar .scroller {
+    width: 8px;
+    height: 8px;
+
+    position: absolute;
+    left: 100%;
+    top: 0;
+    transform: translate(-50%, -50%);
+
+    background: #fff;
+    border-radius: 50%;
+
+    transition: .3s;
+}
+.scroll_bar .scroll_line {
+    width: 1px;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+    margin-left: 10px;
+
+    background: #fff;
+}
+/* > > List */
+.scroll_bar .pages_num-list {
+    text-align: right;
+}
+.scroll_bar .pages_num-list .list-item {
+    color: #fff;
+    font-weight: bold;
+    opacity: .3;
+
+    transition: .3s;
+}
+.scroll_bar .pages_num-list .list-item.active {
+    opacity: 1;
+}
+.header.dark ~ .scroll_bar .scroller,
+.header.dark ~ .scroll_bar .scroll_line {
+    background: var(--black);
+}
+.header.dark ~ .scroll_bar .pages_num-list .list-item {
+    color: var(--black);
+}
+/* > > Scroll process */
+.scroll_bar .scroll-process {
+    position: absolute;
+    top: -90px;
+
+    transition: opacity .3s;
+    cursor: pointer;
+}
+.scroll_bar .scroll-process circle {
+    transition: .2s;
+}
+/* > Menu */
+/* > > Menu opener */
+.menu-opener {
+    cursor: pointer;
+}
+/* > > > Animations */
+.menu-opener svg #bar {
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform .3s;
+}
+.menu-opener:hover svg #bar {
+    transform-origin: left center;
+    transform: scaleX(1);
+}
+/* > Logo */
+.header .logo #trans {
+    transform: rotate(0deg);
+    transform-origin: 50% bottom;
+    
+    transition: .3s;
+}
+.header .logo:hover #trans {
+    transform: rotate(-90deg) translateY(1px);
+}
+
+/* Section */
+.section {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+}
+.section.scroll {
+    overflow-y: auto;
+}
+/* > Cards */
+.card {
+    max-width: 300px;
+
+    background: #07070e;
+}
+/* > Canvas */
+canvas {
+    width: 100vw;
+    height: 100vh;
+}
+.section canvas {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -50;
+}
+
+/* Buttons */
+.button {
+    font-size: 16px;
+
+    overflow: hidden;
+
+    text-transform: uppercase;
+    
+    transition: .3s;
+    cursor: pointer;
+}
+.button .button-text,
+.button .button-ico {
+    z-index: 3;
+}
+.button .button-ico {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+/* > Rounded */
+.button.rounded {
+    width: 40px;
+    max-width: 40px;
+    height: 40px;
+    max-height: 40px;
+}
+/* > Lines */
+.button.lines {
+    overflow: visible;
+}
+.button.lines::after,
+.button.lines::before {
+    content: "";
+
+    width: 30px;
+    height: 1px;
+
+    position: absolute;
+    top: 50%;
+    left: -40px;
+
+    background: #fff;
+
+    transition: .2s;
+}
+.button.lines::before {
+    left: calc(100% + 10px);
+}
+.button.lines:hover::after,
+.button.lines:hover::before {
+    width: 0;
+    left: -10px;
+}
+.button.lines:hover::before {
+    left: calc(100% + 10px);
+}
+/* > Fill */
+.button.fill {
+    padding: 10px 20px;
+
+    background: #fff;
+    color: var(--black);
+    border-radius: 30px;
+}
+.button.fill.dark {
+    background: var(--dark);
+}
+/* > > Wave */
+.button.fill .wave {
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 2;
+
+    background: #000;
+    opacity: .2;
+    border-radius: 50%;
+
+    transition: transform .3s;
+}
+/* > Hide  */
+.button.hide {
+    opacity: 0;
+    transform: translateY(-5px);
+    transition-delay: 0s;
+}
+/* .button.hide.delay2 {
+} */
+.button_hider:hover .button.hide {
+    opacity: 1;
+    transform: translateY(0);
+}
+.button_hider:hover .button.hide.delay {
+    transition-delay: .15s;
+}
+.button_hider:hover .button.hide.delay3 {
+    transition-delay: .3s;
+}
+
+/* Text */
+h1.text.title {
+    font-size: 46px;
+}
+h2.text.title {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+/* Other */
+/* > Line */
+.line {
+    background: #fff;
+
+    transition: .3s;
+}
+.line.ver {
+    width: 1px;
+    height: 30px;
+
+    transform-origin: center top;
+}
+/* > > Animations */
+.line_hoverer:hover .line.ver {
+    transform: translateY(20px) scaleY(1.5);
+}
+.line_hoverer:hover .line.hor {
+    transform: translateX(20px) scaleX(1.5);
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <!-- Styles -->
+    <link rel="stylesheet" href="media/css/normalize.min.css">
+    <link rel="stylesheet" href="https://cloudbogdan.github.io/erid/erid.min.css">
+    <link rel="stylesheet" href="media/css/style.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap" rel="stylesheet">
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="media/js/ecta/ecta.js"></script>
+    <script src="media/js/particles.js"></script>
+    <title>Bogdanoff</title>
+</head>
+<body>
+    <canvas class="main_canvas"></canvas>
+
+    <main class="container content block">
+        <header class="header content button_hider jus cldcenter pfixed">
+            <a href="/" class="logo">
+                <svg width="48" height="24" fill="none" viewBox="0 0 50 25">
+                    <circle cx="12.5" cy="12.5" r="12" stroke="#fff" />
+                    <rect x="25" y="0" width="24" height="1" fill="#fff" /> 
+                    <rect x="25" y="12.5" width="24" height="1" fill="#fff" /> 
+                    <rect id="trans" x="25" y="24" width="24" height="1" fill="#fff" /> 
+                </svg>
+            </a>
+            <div class="content cldcenter">
+                <a href="#" class="button hide fill light margin right max">
+                    <span class="button-text text lower">заказать</span>
+                </a>
+                <div class="menu-opener">
+                    <svg width="50" height="25" fill="none" viewBox="0 0 50 26">
+                        <rect x="0" y="0" width="50" height="1" fill="#fff" />
+                        <rect id="bar" x="0" y="12.5" width="50" height="1" fill="#fff" />
+                        <rect x="25" y="25" width="25" height="1" fill="#fff" />
+                    </svg>
+                </div>
+            </div>
+        </header>
+        <header class="header button_hider _bottom jus content cldcenter pfixed">
+            <!-- <a href="https://vk.com/bbog908" target="_blank" class="button content hide fill rounded">
+                <span class="button-ico">
+                    <svg width="23.8" height="20.6" viewBox="0 0 576 512"><path fill="currentColor" d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z"></path></svg>
+                </span>
+            </a> -->
+            <svg width="30" height="30" class="button hide fullscreen-toogle margin right" viewBox="0 0 31 31" fill="none">
+                <rect width="1" height="10" x="0" y="0" fill="#fff" />
+                <rect width="1" height="10" x="30" y="0" fill="#fff" />
+
+                <rect width="1" height="10" x="0" y="20" fill="#fff" />
+                <rect width="1" height="10" x="30" y="20" fill="#fff" />
+
+                <rect width="10" height="1" x="0" y="0" fill="#fff" />
+                <rect width="10" height="1" x="20" y="0" fill="#fff" />
+
+                <rect width="10" height="1" x="0" y="30" fill="#fff" />
+                <rect width="10" height="1" x="20" y="30" fill="#fff" />
+            </svg>
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" class="music-toogle">
+                <!-- <circle class="music_visualiser" cx="25" cy="25" r="20" stroke="#fff" /> -->
+                <rect class="track" x="0" y="35" width="1" height="15" />
+                <rect class="track" x="12" y="35" width="1" height="15" />
+                <rect class="track" x="25" y="35" width="1" height="15" />
+                <rect class="track" x="37" y="35" width="1" height="15" />
+            </svg>
+        </header>
+        <aside class="scroll_bar pfixed content cldcenter">
+            <div class="content block cldcenter">
+                <div class="scroll-process">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" stroke="#fff">
+                        <path d="M17,17 L33,33" />
+                        <path d="M33,17 L17,33" />
+
+                        <circle cx="25" cy="25" r="24" class="circle_scroll-process" />
+                    </svg>
+                </div>
+                <div class="content block">
+                    <div class="scroller"></div>
+                    <div class="content fill">
+                        <ol class="pages_num-list content block jus">
+                            <li class="list-item active">01</li>
+                            <li class="list-item">02</li>
+                            <li class="list-item">03</li>
+                            <li class="list-item">04</li>
+                            <li class="list-item">05</li>
+                        </ol>
+                        <div class="scroll_line"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="section sec1 sec1 content cldcenter">
+            <canvas class="particles_canvas1 fade opacity fade opacity"></canvas>
+            <div class="content block cldcenter centered">
+                <h1 class="content text title upper center margin bottom">
+                    <div class="fade top delay">wel</div>
+                    <div class="fade top">com</div>
+                    <div class="fade top delay2">e</div>
+                </h1>
+                <div class="button fade top delay2 lines explore_button">
+                    <span class="button-text">explore</span>
+                </div>
+            </div>
+        </section>
+        <section class="section sec2 content cldcenter">
+            <div class="content">
+                <h1 class="fade top content text title upper" style="color: var(--black);">
+                    <div class="fade top delay">привет</div>
+                    <div class="fade top delay3">, я&#160;</div>
+                    <div class="fade top delay2">богдан</div>
+                </h1>
+            </div>
+        </section>
+        <section class="section sec3 content block">
+            <canvas class="particles_canvas2 fade opacity"></canvas>
+            <div class="content block cldcenter centered jus" style="height: 100px;">
+                <h2 class="text title center fade top">Что я могу</h2>
+                <div class="content line_hoverer cldcenter block fade top delay3">
+                    <p>scroll</p>
+                    <div class="line ver"></div>
+                </div>
+                <!-- <div class="content cards margin top max">
+                    <div class="card content block fade bottom">
+                        <div class="card-content padding">
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero ex perspiciatis voluptas nemo architecto reiciendis, rem sint inventore esse tenetur saepe voluptatibus, rerum incidunt, quae hic repellendus consectetur maiores neque!</p>
+                        </div>
+                        <footer class="card-footer padding">
+                            <p class="card-footer-text">Lorem, ipsum dolor.</p>
+                        </footer>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <section class="section sec4 scroll content block">
+            <section class="section">
+                Hello
+            </section>
+            <section class="section">
+                Hello
+            </section>
+            <section class="section">
+                Hello
+            </section>
+        </section>
+        <section class="section sec5">
+            
+        </section>
+    </main>
+
+    <script src="media/js/easyscript.js"></script>
+
+    <script src="media/js/math.js"></script>
+    <script src="media/js/main.js"></script>
+
+    <script src="media/js/buttons.js"></script>
+    <script src="media/js/controller.js"></script>
+    <script src="media/js/navigator.js"></script>
+    <script src="media/js/animations.js"></script>
+
+    <script>
+        let pr = particlesInit(document.querySelector(".particles_canvas1"));
+        let pr2 = particlesParalaxInit(document.querySelector(".particles_canvas2"));
+        
+        on_click(
+            ()=> {
+
+                if (!is_full) {
+
+                    pr = particlesInit(document.querySelector(".particles_canvas1"));
+                    pr2 = particlesParalaxInit(document.querySelector(".particles_canvas2"));
+
+                }
+                else
+                    delay(
+                        ()=> {
+
+                            pr = particlesInit(document.querySelector(".particles_canvas1"));
+                            pr2 = particlesParalaxInit(document.querySelector(".particles_canvas2"));
+
+                        },
+                    200);
+
+            },
+        fullscreen_toogle);
+    </script>
+</body>
+</html>
